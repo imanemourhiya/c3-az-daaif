@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Entreprise | Galerie</title>
+    <meta name="description" content="Galerie photo et vidéo">
+    <meta property="og:title" content="Mon Entreprise | Galerie">
+    <meta property="og:image" content="images/gallery1.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Galerie & Visuel</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">Équipe</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Nos Locaux (Images Responsives)</h2>
+        
+        <p>Utilisation de la balise picture :</p>
+        <!-- Balise picture pour choisir l'image selon la taille de l'écran -->
+        <picture>
+            <source media="(min-width: 800px)" srcset="images/gallery1.png">
+            <img src="images/gallery1.png" alt="Nos bureaux modernes" style="max-width:400px;">
+        </picture>
+
+        <p>Utilisation de l'attribut srcset :</p>
+        <!-- Attribut srcset directement sur la balise img -->
+        <img src="images/gallery2.png" 
+             srcset="images/gallery2.png 1x, images/gallery2.png 2x" 
+             sizes="(max-width: 600px) 100vw, 50vw" 
+             alt="Réunion d'équipe" 
+             style="max-width:400px;">
+
+        <h2>Vidéo de Présentation</h2>
+        <!-- Vidéo en autoplay, muette et en boucle -->
+        <video width="600" autoplay muted loop controls>
+            <source src="images/intro.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+    </main>
+
+    <footer>
+        <p><a href="index.html">Plan du site</a> | <a href="#">Mentions légales</a></p>
+        <p>&copy; 2026 Mon Entreprise</p>
+    </footer>
+</body>
+</html>

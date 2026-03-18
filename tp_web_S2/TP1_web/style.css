@@ -1,0 +1,37 @@
+body{
+    padding: 50px;
+    background-color: #94b5e8;
+    top: 0;
+}
+
+header{
+    background-color: #737070;
+    top: 20px;
+}
+#me1, #me2 {
+    background-color: #737070;
+    padding: 20px;
+    border-radius:100%;
+}
+
+#me1 {
+   position: relative;
+ 
+}
+
+#me2 {
+   
+position: relative;
+ 
+}
+#accueil
+{display: flex;
+padding:0 10% 0 10%;
+}
+
+#apropos {
+    display: flex;             /* active flex */
+    flex-direction: column;    /* empile verticalement */
+    align-items: center;       /* centre horizontalement */
+    text-align: center;        /* centre le texte à l'intérieur */
+}

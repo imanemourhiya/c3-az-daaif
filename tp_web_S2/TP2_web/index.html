@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #59b6f0;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    form {
+      background-color: rgb(147, 149, 152);
+      padding: 30px;
+      border-radius: 10px;
+      width: 450px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #555;
+      padding: 0 5px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="password"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      display: inline;
+      margin-left: 5px;
+    }
+
+    .radio-group div,
+    .checkbox-group div {
+      margin-top: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<form action="#" method="post">
+  <h1>Inscription</h1>
+
+  <!-- Informations personnelles -->
+  <fieldset>
+    <legend>Informations personnelles</legend>
+
+    <label for="prenom">Prénom *</label>
+    <input type="text" id="prenom" name="prenom" required placeholder="NOM"  />
+
+    <label for="nom">Nom *</label>
+    <input type="text" id="nom" name="nom" required placeholder="PRENOM"  />
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required placeholder="EMAIL@exemple.fr"  />
+
+    <label for="telephone">Téléphone *</label>
+    <input type="tel" id="telephone" name="telephone" required
+           placeholder="00 00 00 00 00"
+           title="Format attendu : 00 00 00 00 00" />
+
+    <label for="dob">Date de naissance *</label>
+    <input type="date" id="dob" name="dob" required />
+  </fieldset>
+
+  <fieldset>
+    <legend>Mot de passe</legend>
+
+    <label for="password">Mot de passe *</label>
+    <input type="password" id="password" name="password" required
+           pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
+           title="Min 8 caractères, 1 majuscule et 1 chiffre"
+           placeholder="Min 8 caractères, 1 majuscule, 1 chiffre"
+           autocomplete="new-password" />
+
+    <label for="confirm">Confirmer le mot de passe *</label>
+    <input type="password" id="confirm" name="confirm" required
+           placeholder="Répétez votre mot de passe" />
+  </fieldset>
+
+  <!-- Localisation -->
+  <fieldset>
+    <legend>Localisation</legend>
+
+    <label for="pays">Pays *</label>
+    <input list="liste-pays" id="pays" name="pays" required placeholder="Chercher un pays…" />
+    <datalist id="liste-pays">
+      <option value="France">
+      <option value="Belgique">
+      <option value="Suisse">
+      <option value="Canada">
+      <option value="Maroc">
+      <option value="Tunisie">
+      <option value="Algérie">
+      <option value="Sénégal">
+    </datalist>
+  </fieldset>
+
+  <!-- Genre -->
+  <fieldset>
+    <legend>Genre</legend>
+    <div class="radio-group">
+      <div>
+        <input type="radio" id="femme" name="genre" value="femme" required />
+        <label for="femme">Femme</label>
+      </div>
+      <div>
+        <input type="radio" id="homme" name="genre" value="homme" />
+        <label for="homme">Homme</label>
+      </div>
+      <div>
+        <input type="radio" id="autre" name="genre" value="autre" />
+        <label for="autre">Autre</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Centres d'intérêt -->
+  <fieldset>
+    <legend>Centres d'intérêt</legend>
+    <div class="checkbox-group">
+      <div><input type="checkbox" id="tech" name="interests" value="tech" /><label for="tech"> Technologie</label></div>
+      <div><input type="checkbox" id="sport" name="interests" value="sport" /><label for="sport"> Sport</label></div>
+      <div><input type="checkbox" id="musique" name="interests" value="musique" /><label for="musique"> Musique</label></div>
+      <div><input type="checkbox" id="voyage" name="interests" value="voyage" /><label for="voyage"> Voyage</label></div>
+      <div><input type="checkbox" id="cuisine" name="interests" value="cuisine" /><label for="cuisine"> Cuisine</label></div>
+      <div><input type="checkbox" id="autre" name="interests" value="autre" /><label for="autre"> Autre</label></div>
+    </div>
+  </fieldset>
+
+  <!-- Biographie -->
+  <fieldset>
+    <legend>Biographie</legend>
+    <label for="bio">Parlez de vous</label>
+    <textarea id="bio" name="bio" maxlength="500" rows="4"
+              placeholder="Présentez-vous en quelques mots…"></textarea>
+  </fieldset>
+
+  <!-- Photo de profil -->
+  <fieldset>
+    <legend>Photo de profil</legend>
+    <label for="photo">Choisir une photo</label>
+    <input type="file" id="photo" name="photo" accept="image/*" />
+  </fieldset>
+
+  <!-- CGU -->
+  <fieldset>
+    <legend>Conditions d'utilisation</legend>
+    <input type="checkbox" id="cgu" name="cgu" required />
+    <label for="cgu" style="display:inline; margin-left:6px">
+      J'accepte les <a href="#">Conditions Générales d'Utilisation</a> *
+    </label>
+  </fieldset>
+
+  <button type="submit">Créer mon compte</button>
+</form>
+
+
+</body>
+</html>

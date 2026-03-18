@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Entreprise | Contact</title>
+    <meta name="description" content="Formulaire de contact">
+    <meta property="og:title" content="Mon Entreprise | Contact">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nous Contacter</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">Équipe</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Envoyez-nous un message</h2>
+        
+        <!-- Formulaire avec de nombreux types d'inputs -->
+        <form action="#" method="get">
+            <label for="nom">Nom complet :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="email">Adresse Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="tel" id="telephone" name="telephone">
+
+            <label for="date-rdv">Date de rendez-vous souhaitée :</label>
+            <input type="date" id="date-rdv" name="date-rdv">
+
+            <label for="couleur">Quelle est votre couleur préférée pour la marque ?</label>
+            <input type="color" id="couleur" name="couleur" value="#004080">
+
+            <label for="sujet">Sujet de votre demande :</label>
+            <select id="sujet" name="sujet">
+                <option value="devis">Demande de devis</option>
+                <option value="support">Support technique</option>
+                <option value="autre">Autre</option>
+            </select>
+
+            <label for="message">Votre Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <label>
+                <input type="checkbox" name="rgpd" required style="width:auto; margin-top:0;"> 
+                J'accepte que mes données soient utilisées pour me recontacter
+            </label>
+            <br><br>
+
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="Recommencer">
+        </form>
+
+        <h2>Notre Emplacement</h2>
+        <!-- Carte iframe -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!1m2!1m3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+
+    </main>
+
+    <footer>
+        <p><a href="index.html">Plan du site</a> | <a href="#">Mentions légales</a></p>
+        <p>&copy; 2026 Mon Entreprise</p>
+    </footer>
+</body>
+</html>
